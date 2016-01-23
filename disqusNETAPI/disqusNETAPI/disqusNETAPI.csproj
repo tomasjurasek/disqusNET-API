@@ -45,24 +45,25 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="DisqusExceptionRequest.cs" />
+    <Compile Include="Exceptions\DisqusExceptionRequest.cs" />
     <Compile Include="DTO\Forum\Create\ForumCreate.cs" />
     <Compile Include="DTO\Forum\Create\ForumCreateResponse.cs" />
     <Compile Include="DTO\Forum\Create\ForumCreateResponseFavicon.cs" />
     <Compile Include="Helpers\JsonHelper.cs" />
     <Compile Include="Helpers\UrlHelper.cs" />
-    <Compile Include="JsonInterface\Action.cs" />
-    <Compile Include="JsonInterface\RootObject.cs" />
-    <Compile Include="JsonInterface\Topic.cs" />
+    <Compile Include="DTO\DisqusInterface\Action.cs" />
+    <Compile Include="DTO\DisqusInterface\RootObject.cs" />
+    <Compile Include="DTO\DisqusInterface\Topic.cs" />
+    <Compile Include="Helpers\ValidHelper.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Services\Base\DisqusApiBase.cs" />
-    <Compile Include="Enum\Method.cs" />
+    <Compile Include="Enums\Method.cs" />
     <Compile Include="Services\DisqusApi.cs" />
     <Compile Include="Services\Interface\IDisqusApi.cs" />
   </ItemGroup>
   <ItemGroup />
   <ItemGroup>
-    <None Include="JsonInterface\interface.json" />
+    <None Include="DisqusInterface\interface.json" />
     <None Include="packages.config" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

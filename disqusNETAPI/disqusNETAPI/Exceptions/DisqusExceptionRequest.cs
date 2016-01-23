@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace disqusNETAPI
+namespace disqusNETAPI.Exceptions
 {
     public class DisqusExceptionRequest : Exception
     {
@@ -12,7 +12,6 @@ namespace disqusNETAPI
         {
             this.Code = code;
         }
-
         public int Code { get; set; }
     }
 

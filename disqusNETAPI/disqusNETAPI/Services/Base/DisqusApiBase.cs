@@ -1,4 +1,5 @@
-﻿using disqusNETAPI.Enum;
+﻿using disqusNETAPI.Enums;
+using disqusNETAPI.Exceptions;
 using disqusNETAPI.Helpers;
 using Newtonsoft.Json.Linq;
 using System;

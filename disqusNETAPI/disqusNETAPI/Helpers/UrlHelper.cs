@@ -8,7 +8,7 @@ namespace disqusNETAPI.Helpers
 {
     public class UrlHelper
     {
-        public  string CreateUrlForRequest(string domain, string topic, string action, Dictionary<string, string> parameters)
+        public  string CreateUrl(string domain, string topic, string action, Dictionary<string, string> parameters)
         {
             string url = string.Format("{0}/{1}/{2}.json", domain, topic, action);
             int i = 0;

@@ -5,7 +5,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace disqusNETAPI.JsonInterface
+namespace disqusNETAPI.DTO.DisqusInterface
 {
     public class Action
     {

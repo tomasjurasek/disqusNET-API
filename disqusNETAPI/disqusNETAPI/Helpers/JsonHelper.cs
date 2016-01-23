@@ -1,5 +1,5 @@
-﻿using disqusNETAPI.DTO.Forum;
-using disqusNETAPI.JsonInterface;
+﻿using disqusNETAPI.DTO.DisqusInterface;
+using disqusNETAPI.DTO.Forum;
 using Newtonsoft.Json;
 using System;
 using System.Collections.Generic;
@@ -14,7 +14,7 @@ namespace disqusNETAPI.Helpers
     public class JsonHelper
     {
 
-        public T JsonSerialize<T>(HttpResponseMessage response)
+        public T SerializeResponse<T>(HttpResponseMessage response)
         {
             object result = default(T);
 
@@ -33,19 +33,11 @@ namespace disqusNETAPI.Helpers
             return (T)result;
         }
 
-        
-        public void IsMethod(string topic, string action)
-        {
-            var m = JsonDeserializeInterface();
-            var r = m.topic.SingleOrDefault(s => s.name == topic).action.SingleOrDefault(s => s.name == action);
-            if (r == null)
-                throw new Exception();
+       
 
-        }
-
-        private RootObject JsonDeserializeInterface()
+        public RootObject JsonDeserializeInterface()
         {
-            using (StreamReader file = File.OpenText(@"C:\Prace\Moje\DisqusNetApi\disqusNETAPI\disqusNETAPI\JsonInterface\interface.json"))
+            using (StreamReader file = File.OpenText(@"C:\Prace\Moje\DisqusNetApi\disqusNETAPI\disqusNETAPI\DisqusInterface\interface.json"))
             using (JsonReader reader = new JsonTextReader(file))
             {
                 JsonSerializer serializer = new JsonSerializer();

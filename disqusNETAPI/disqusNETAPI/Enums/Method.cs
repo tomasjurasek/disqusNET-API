@@ -1,4 +1,4 @@
-﻿namespace disqusNETAPI.Enum
+﻿namespace disqusNETAPI.Enums
 {
     public enum Method
     {

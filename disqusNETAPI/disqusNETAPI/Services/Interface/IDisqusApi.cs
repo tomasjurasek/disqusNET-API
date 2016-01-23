@@ -1,4 +1,4 @@
-﻿using disqusNETAPI.Enum;
+﻿using disqusNETAPI.Enums;
 using System;
 using System.Collections.Generic;
 using System.Linq;
