@@ -11,7 +11,7 @@ using System.Threading.Tasks;
 
 namespace disqusNETAPI.Helpers
 {
-    public class Json
+    public class JsonHelper
     {
 
         public T JsonSerialize<T>(HttpResponseMessage response)
@@ -33,7 +33,17 @@ namespace disqusNETAPI.Helpers
             return (T)result;
         }
 
-        public RootObject IsMethod()
+        
+        public void IsMethod(string topic, string action)
+        {
+            var m = JsonDeserializeInterface();
+            var r = m.topic.SingleOrDefault(s => s.name == topic).action.SingleOrDefault(s => s.name == action);
+            if (r == null)
+                throw new Exception();
+
+        }
+
+        private RootObject JsonDeserializeInterface()
         {
             using (StreamReader file = File.OpenText(@"C:\Prace\Moje\DisqusNetApi\disqusNETAPI\disqusNETAPI\JsonInterface\interface.json"))
             using (JsonReader reader = new JsonTextReader(file))
@@ -42,6 +52,7 @@ namespace disqusNETAPI.Helpers
                 return serializer.Deserialize<RootObject>(reader);
             }
         }
+
     }
-                        
+
 }

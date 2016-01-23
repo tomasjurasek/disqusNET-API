@@ -1,54 +1,45 @@
-﻿using disqusNETAPI.Helpers;
-using disqusNETAPI.JsonInterface;
+﻿
+using disqusNETAPI.Enum;
+using disqusNETAPI.Helpers;
 using disqusNETAPI.Services.Base;
+using disqusNETAPI.Services.Interface;
 using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Net.Http;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace disqusNETAPI.Services
 {
-    public class DisqusApi : DisqusApiBase
+    public class DisqusApi : DisqusApiBase, IDisqusApi
     {
-        private Json json;
+        private JsonHelper json;
+        private UrlHelper urlHelper;
 
         public DisqusApi()
         {
-            json = new Json();
+            json = new JsonHelper();
+            urlHelper = new UrlHelper();
         }
-        public T Disqus<T>(string topic, string action, Dictionary<string, string> parameters)
+        public T Disqus<T>(string topic, string action, Method method, Dictionary<string, string> parameters)
         {
 
+            json.IsMethod(topic, action);
 
-            var m = json.IsMethod();
-            var r = m.topic.SingleOrDefault(s => s.name == topic).action.Single(s => s.name == action);
-            if (r == null)
-                throw new Exception();
+            var url = urlHelper.CreateUrlForRequest(ApiUrl, topic, action, parameters);
+            var response = SendRequest(url, method);
+            var result = json.JsonSerialize<T>(response);
 
-
-
-            var url = UrlHelper.GetUrlForRequst(ApiUrl, topic, action, parameters);
-            var response = SendRequestPost(url);
-            var result = Json.JsonSerialize<T>(response);
-
-            return(T)result;
+            return (T)result;
 
         }
 
-        public HttpResponseMessage Disqus(string topic, string action, Dictionary<string, string> parameters)
+        public HttpResponseMessage Disqus(string topic, string action,Method method, Dictionary<string, string> parameters)
         {
-
-            var m = json.IsMethod();
-            var r = m.topic.SingleOrDefault(s => s.name == topic).action.Single(s => s.name == action);
-            if (r == null)
-                throw new Exception();
+            json.IsMethod(topic, action);
 
 
-
-            var url = UrlHelper.GetUrlForRequst(ApiUrl, topic, action, parameters);
-            var response = SendRequestPost(url);
+            var url = urlHelper.CreateUrlForRequest(ApiUrl, topic, action, parameters);
+            var response = SendRequest(url,method);
 
             return response;
 

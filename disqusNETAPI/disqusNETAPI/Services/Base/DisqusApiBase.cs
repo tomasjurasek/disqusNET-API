@@ -1,4 +1,6 @@
-﻿using disqusNETAPI.Helpers;
+﻿using disqusNETAPI.Enum;
+using disqusNETAPI.Helpers;
+using Newtonsoft.Json.Linq;
 using System;
 using System.Collections.Generic;
 using System.Configuration;
@@ -18,15 +20,11 @@ namespace disqusNETAPI.Services.Base
         public readonly string  ApiUrl = @"https://disqus.com/api/3.0";
 
 
-        public Json Json;
-        public UrlHelper UrlHelper;
         public DisqusApiBase()
         {
-            Json = new Json();
-            UrlHelper = new UrlHelper();
         }
 
-        public HttpResponseMessage SendRequestPost(string url)
+        public HttpResponseMessage SendRequest(string url, Method method)
         {
             using (HttpClient client = new HttpClient())
             {
@@ -37,7 +35,15 @@ namespace disqusNETAPI.Services.Base
                 {
                     try
                     {
-                        result = await client.PostAsync(url, null);
+                        if(method == Method.POST)
+                        {
+                            result = await client.PostAsync(url, null);
+                        }
+                        else
+                        {
+                            result = await client.GetAsync(url);
+                        }
+                       
                     }
                     catch (Exception ex)
                     {
@@ -45,11 +51,32 @@ namespace disqusNETAPI.Services.Base
                     }
                 }).Wait();
 
+                if(!result.IsSuccessStatusCode)
+                {
+                    Task.Run(async () =>
+                    {
+                        string rawResponse = await result.Content.ReadAsStringAsync();
+                   
+
+                    try
+                    {
+                        JObject json = JObject.Parse(rawResponse);
+
+                        throw new DisqusExceptionRequest((string)json["response"], (int)json["code"]);
+                    }
+                    catch (Exception ex)
+                    {
+                        throw new DisqusExceptionRequest("Error " + ex.Message + "; " + result.Content.ReadAsStringAsync(), 99);
+                    }
+                    }).Wait();
+                }
+
                 return result;
 
             }
         }
 
-        
+
+
     }
 }
