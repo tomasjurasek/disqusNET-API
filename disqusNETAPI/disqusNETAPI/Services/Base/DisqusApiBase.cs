@@ -15,6 +15,8 @@ namespace disqusNETAPI.Services.Base
         public readonly string ApiKey = ConfigurationManager.AppSettings["Disqus:AppId"];
         public  readonly string AccessToken = ConfigurationManager.AppSettings["Disqus:AccessToken"];
 
+        public readonly string  ApiUrl = @"https://disqus.com/api/3.0";
+
 
         public Json Json;
         public UrlHelper UrlHelper;
@@ -24,7 +26,7 @@ namespace disqusNETAPI.Services.Base
             UrlHelper = new UrlHelper();
         }
 
-        public HttpResponseMessage SendRequest(string url)
+        public HttpResponseMessage SendRequestPost(string url)
         {
             using (HttpClient client = new HttpClient())
             {

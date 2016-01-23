@@ -1,4 +1,5 @@
 ﻿using disqusNETAPI.DTO.Forum;
+using disqusNETAPI.JsonInterface;
 using Newtonsoft.Json;
 using System;
 using System.Collections.Generic;
@@ -31,5 +32,16 @@ namespace disqusNETAPI.Helpers
 
             return (T)result;
         }
+
+        public RootObject IsMethod()
+        {
+            using (StreamReader file = File.OpenText(@"C:\Prace\Moje\DisqusNetApi\disqusNETAPI\disqusNETAPI\JsonInterface\interface.json"))
+            using (JsonReader reader = new JsonTextReader(file))
+            {
+                JsonSerializer serializer = new JsonSerializer();
+                return serializer.Deserialize<RootObject>(reader);
+            }
+        }
     }
+                        
 }

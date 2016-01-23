@@ -1,0 +1,53 @@
+﻿{
+	"topic": [{
+			"name": "reactions",
+			"action": [{
+					"name": "restore",
+					"required": [
+						"reaction",
+						"forum"
+					],
+					"method": "POST",
+					"formats": [
+						"json",
+						"jsonp"
+					]
+				},
+
+
+				{
+					"name": "list",
+					"required": [
+						"forum"
+					],
+					"method": "POST",
+					"formats": [
+						"json",
+						"jsonp"
+					]
+				}
+			]
+
+		},
+
+		{
+			"name": "forums",
+      "action": [
+        {
+          "name": "create",
+          "required": [
+            "website",
+            "name",
+            "short_name"
+          ],
+          "method": "POST",
+          "formats": [
+            "json",
+            "jsonp"
+          ]
+        }
+      ]
+		}
+
+	]
+}
