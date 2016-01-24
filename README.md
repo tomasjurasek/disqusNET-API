@@ -1,6 +1,6 @@
 # disqusNET-API
 
-In your app you need in config:
+### In your app you need in config:
 ```cs
 <appSettings>
     <add key="Disqus:AppId" value="KEY" />
@@ -11,20 +11,21 @@ In your app you need in config:
   
 
   
-You can call 2 method:
-  - Disqus<'ReturnObject'> (objects are defines in DTO folder)
+### You can call 2 methods:
+  - Disqus<'ReturnObject'> (objects are defined in DTO folder)
   - Disqus whitch returns HttpResponseMessage
   
-Parameters:
+### Parameters:
   - 1) Topic
   - 2) Action
   - 3) Method (GET, POST)
   - 4) Dictionary with parameters for API
   
-Valid Topics and Action you can find on https://disqus.com/api/docs/.
-If you want use some Topics and Action check if they are in interface.json file in project.
+Valid Topics and Actions you can find on https://disqus.com/api/docs/.
+If you want use some Topics and Actions, first check if they are in interface.json file in project.
   
-Example
+
+### Example
 
   ```cs
    var parameters = new Dictionary<string, string>
