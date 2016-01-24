@@ -33,11 +33,14 @@ namespace disqusNETAPI.Helpers
             return (T)result;
         }
 
-       
 
         public RootObject JsonDeserializeInterface()
         {
-            using (StreamReader file = File.OpenText(@"C:\Prace\Moje\DisqusNetApi\disqusNETAPI\disqusNETAPI\DisqusInterface\interface.json"))
+            var appDomain = System.AppDomain.CurrentDomain;
+            var basePath = appDomain.RelativeSearchPath ?? appDomain.BaseDirectory;
+            var path = Path.Combine(basePath, "DisqusInterface", "interface.json");
+
+            using (StreamReader file = File.OpenText(path))
             using (JsonReader reader = new JsonTextReader(file))
             {
                 JsonSerializer serializer = new JsonSerializer();

@@ -63,7 +63,9 @@
   </ItemGroup>
   <ItemGroup />
   <ItemGroup>
-    <None Include="DisqusInterface\interface.json" />
+    <EmbeddedResource Include="DisqusInterface\interface.json">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </EmbeddedResource>
     <None Include="packages.config" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

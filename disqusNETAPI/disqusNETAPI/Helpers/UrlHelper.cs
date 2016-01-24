@@ -8,8 +8,12 @@ namespace disqusNETAPI.Helpers
 {
     public class UrlHelper
     {
-        public  string CreateUrl(string domain, string topic, string action, Dictionary<string, string> parameters)
+        public  string CreateUrl(string domain, string topic, string action, Dictionary<string, string> parameters, string apiKey, string apiSecretKey, string accessToken)
         {
+            parameters.Add("api_key", apiKey);
+            parameters.Add("api_secret", apiSecretKey);
+            parameters.Add("access_token", accessToken);
+
             string url = string.Format("{0}/{1}/{2}.json", domain, topic, action);
             int i = 0;
             foreach (var item in parameters)

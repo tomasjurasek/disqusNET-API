@@ -16,14 +16,10 @@ namespace disqusNETAPI.Services.Base
     {
         public readonly string SecretApiKey = ConfigurationManager.AppSettings["Disqus:AppSecret"];
         public readonly string ApiKey = ConfigurationManager.AppSettings["Disqus:AppId"];
-        public  readonly string AccessToken = ConfigurationManager.AppSettings["Disqus:AccessToken"];
+        public readonly string AccessToken = ConfigurationManager.AppSettings["Disqus:AccessToken"];
 
         public readonly string  ApiUrl = @"https://disqus.com/api/3.0";
 
-
-        public DisqusApiBase()
-        {
-        }
 
         public HttpResponseMessage SendRequest(string url, Method method)
         {
@@ -48,7 +44,7 @@ namespace disqusNETAPI.Services.Base
                     }
                     catch (Exception ex)
                     {
-                        //handle it!
+                        throw new DisqusExceptionResponse("Error " + ex.Message + "; " + result.Content.ReadAsStringAsync(), 99);
                     }
                 }).Wait();
 
@@ -56,19 +52,18 @@ namespace disqusNETAPI.Services.Base
                 {
                     Task.Run(async () =>
                     {
-                        string rawResponse = await result.Content.ReadAsStringAsync();
-                   
+                        
+                        try
+                        {
+                            string rawResponse = await result.Content.ReadAsStringAsync();
+                            JObject json = JObject.Parse(rawResponse);
 
-                    try
-                    {
-                        JObject json = JObject.Parse(rawResponse);
-
-                        throw new DisqusExceptionRequest((string)json["response"], (int)json["code"]);
-                    }
-                    catch (Exception ex)
-                    {
-                        throw new DisqusExceptionRequest("Error " + ex.Message + "; " + result.Content.ReadAsStringAsync(), 99);
-                    }
+                            throw new DisqusExceptionResponse((string)json["response"], (int)json["code"]);
+                        }
+                        catch (Exception ex)
+                        {
+                            throw new DisqusExceptionResponse("Error " + ex.Message + "; " + result.Content.ReadAsStringAsync(), 99);
+                        }
                     }).Wait();
                 }
 
