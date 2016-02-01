@@ -44,7 +44,7 @@ namespace disqusNETAPI.Services.Base
                     }
                     catch (Exception ex)
                     {
-                        throw new DisqusExceptionResponse("Error " + ex.Message + "; " + result.Content.ReadAsStringAsync(), 99);
+                        throw new RequestException(ex.Message, 99);
                     }
                 }).Wait();
 
@@ -58,11 +58,11 @@ namespace disqusNETAPI.Services.Base
                             string rawResponse = await result.Content.ReadAsStringAsync();
                             JObject json = JObject.Parse(rawResponse);
 
-                            throw new DisqusExceptionResponse((string)json["response"], (int)json["code"]);
+                            throw new RequestException((string)json["response"], (int)json["code"]);
                         }
                         catch (Exception ex)
                         {
-                            throw new DisqusExceptionResponse("Error " + ex.Message + "; " + result.Content.ReadAsStringAsync(), 99);
+                            throw new RequestException(ex.Message, 99);
                         }
                     }).Wait();
                 }

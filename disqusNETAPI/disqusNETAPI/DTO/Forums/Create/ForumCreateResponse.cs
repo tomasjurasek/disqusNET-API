@@ -1,6 +1,6 @@
 ﻿using Newtonsoft.Json;
 
-namespace disqusNETAPI.DTO.Forum.Create
+namespace disqusNETAPI.DTO.Forums.Create
 {
     public class ForumCreateResponse
     {

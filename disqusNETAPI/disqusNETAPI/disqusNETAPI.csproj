@@ -45,10 +45,24 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Exceptions\DisqusExceptionRequest.cs" />
-    <Compile Include="DTO\Forum\Create\ForumCreate.cs" />
-    <Compile Include="DTO\Forum\Create\ForumCreateResponse.cs" />
-    <Compile Include="DTO\Forum\Create\ForumCreateResponseFavicon.cs" />
+    <Compile Include="DTO\Forums\ListThreads\ListThreads.cs" />
+    <Compile Include="DTO\Forums\ListThreads\ListThreadsCursor.cs" />
+    <Compile Include="DTO\Forums\ListThreads\ListThreadsResponse.cs" />
+    <Compile Include="DTO\Posts\Remove\PostRemove.cs" />
+    <Compile Include="DTO\Posts\Remove\PostRemoveResponse.cs" />
+    <Compile Include="DTO\Posts\Spam\PostSpam.cs" />
+    <Compile Include="DTO\Posts\Spam\PostSpamResponse.cs" />
+    <Compile Include="DTO\Threads\Create\ThreadCreate.cs" />
+    <Compile Include="DTO\Threads\Create\ThreadCreateResponse.cs" />
+    <Compile Include="DTO\Threads\ListPosts\ListPosts.cs" />
+    <Compile Include="DTO\Threads\ListPosts\ListPostsAuthor.cs" />
+    <Compile Include="DTO\Threads\ListPosts\ListPostsAvatar.cs" />
+    <Compile Include="DTO\Threads\ListPosts\ListPostsCursor.cs" />
+    <Compile Include="DTO\Threads\ListPosts\ListPostsResponse.cs" />
+    <Compile Include="Exceptions\RequestException.cs" />
+    <Compile Include="DTO\Forums\Create\ForumCreate.cs" />
+    <Compile Include="DTO\Forums\Create\ForumCreateResponse.cs" />
+    <Compile Include="DTO\Forums\Create\ForumCreateResponseFavicon.cs" />
     <Compile Include="Helpers\JsonHelper.cs" />
     <Compile Include="Helpers\UrlHelper.cs" />
     <Compile Include="DTO\DisqusInterface\Action.cs" />
@@ -61,7 +75,9 @@
     <Compile Include="Services\DisqusApi.cs" />
     <Compile Include="Services\Interface\IDisqusApi.cs" />
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <Folder Include="DTO\Forums\Update\" />
+  </ItemGroup>
   <ItemGroup>
     <EmbeddedResource Include="DisqusInterface\interface.json">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>

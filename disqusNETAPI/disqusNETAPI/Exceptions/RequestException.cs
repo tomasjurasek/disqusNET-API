@@ -6,9 +6,9 @@ using System.Threading.Tasks;
 
 namespace disqusNETAPI.Exceptions
 {
-    public class DisqusExceptionResponse : Exception
+    public class RequestException : Exception
     {
-        public DisqusExceptionResponse(string message, int code) : base(message)
+        public RequestException(string message, int code) : base(message)
         {
             this.Code = code;
         }

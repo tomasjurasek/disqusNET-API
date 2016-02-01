@@ -20,7 +20,6 @@ namespace disqusNETAPI.Helpers
 
         public void ParametersNotContainApiKeys(Dictionary<string, string> parameters, RootObject rootObject, string topic, string action)
         {
-            var requiredParams = rootObject.topic.SingleOrDefault(s => s.name == topic).action.SingleOrDefault(s => s.name == action).required;
             foreach (var item in parameters)
             {
                 if (item.Key == "api_key" &&

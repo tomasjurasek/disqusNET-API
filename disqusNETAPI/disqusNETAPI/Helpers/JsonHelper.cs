@@ -1,5 +1,5 @@
 ﻿using disqusNETAPI.DTO.DisqusInterface;
-using disqusNETAPI.DTO.Forum;
+using disqusNETAPI.DTO.Forums;
 using Newtonsoft.Json;
 using System;
 using System.Collections.Generic;

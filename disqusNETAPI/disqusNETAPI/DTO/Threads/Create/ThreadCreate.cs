@@ -5,13 +5,13 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace disqusNETAPI.DTO.Forum.Create
+namespace disqusNETAPI.DTO.Thread.Create
 {
-    public class ForumCreate
+    public class ThreadCreate
     {
         [JsonProperty(PropertyName = "code")]
-        public string Code { get; set; }
+        public int code { get; set; }
         [JsonProperty(PropertyName = "response")]
-        public ForumCreateResponse Response { get; set; }
+        public ThreadCreateResponse response { get; set; }
     }
 }

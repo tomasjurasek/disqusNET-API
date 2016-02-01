@@ -30,8 +30,8 @@
 
 		},
 
-		{
-			"name": "forums",
+    {
+      "name": "forums",
       "action": [
         {
           "name": "create",
@@ -45,9 +45,93 @@
             "json",
             "jsonp"
           ]
+        },
+
+        {
+          "name": "listThreads",
+          "required": [
+            "forum"
+          ],
+          "method": "GET",
+          "formats": [
+            "json",
+            "jsonp",
+            "rss"
+          ]
+        },
+
+        {
+          "name": "update",
+          "required": [
+            "forum"
+          ],
+          "method": "POST",
+          "formats": [
+            "json",
+            "jsonp"
+          ]
         }
       ]
-		}
+    },
+    {
+      "name": "threads",
+      "action": [
+        {
+          "name": "create",
+          "required": [
+            "forum",
+            "title"
+          ],
+          "method": "POST",
+          "formats": [
+            "json",
+            "jsonp"
+          ]
+        },
+        {
+          "name": "listPosts",
+          "required": [
+            "thread"
+          ],
+          "method": "GET",
+          "formats": [
+            "json",
+            "jsonp",
+            "rss"
+          ]
+        }
+      ]
+    },
+    {
+      "name": "posts",
+      "action": [
+        {
+          "name": "remove",
+          "required": [
+            "post"
+          ],
+          "method": "POST",
+          "formats": [
+            "json",
+            "jsonp"
+          ]
+        },
+        {
+          "name": "spam",
+            "required": [
+              "post"
+            ],
+            "method": "POST",
+            "formats": [
+              "json",
+              "jsonp"
+            ]
+          
+        }
+
+      ]
+    }
+    
 
 	]
 }

@@ -5,13 +5,13 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace disqusNETAPI.DTO.Forum.Create
+namespace disqusNETAPI.DTO.Thread.ListPosts
 {
-    public class ForumCreateResponseFavicon
+    public class ListPostsAvatar
     {
         [JsonProperty(PropertyName = "permalink")]
-        public string Permalink { get; set; }
+        public string permalink { get; set; }
         [JsonProperty(PropertyName = "cache")]
-        public string Cache { get; set; }
+        public string cache { get; set; }
     }
 }
