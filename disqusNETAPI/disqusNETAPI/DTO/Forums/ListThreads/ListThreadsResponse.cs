@@ -10,41 +10,41 @@ namespace disqusNETAPI.DTO.Forums.ListThreads
     public class ListThreadsResponse
     {
         [JsonProperty(PropertyName = "category")]
-        public string category { get; set; }
+        public string Category { get; set; }
         [JsonProperty(PropertyName = "reactions")]
-        public int reactions { get; set; }
+        public int Reactions { get; set; }
         [JsonProperty(PropertyName = "identifiers")]
-        public List<object> identifiers { get; set; }
+        public List<object> Identifiers { get; set; }
         [JsonProperty(PropertyName = "forum")]
-        public string forum { get; set; }
+        public string Forum { get; set; }
         [JsonProperty(PropertyName = "title")]
-        public string title { get; set; }
+        public string Title { get; set; }
         [JsonProperty(PropertyName = "dislikes")]
-        public int dislikes { get; set; }
+        public int Dislikes { get; set; }
         [JsonProperty(PropertyName = "isDeleted")]
-        public bool isDeleted { get; set; }
+        public bool IsDeleted { get; set; }
         [JsonProperty(PropertyName = "author")]
-        public string author { get; set; }
+        public string Author { get; set; }
         [JsonProperty(PropertyName = "userScore")]
-        public int userScore { get; set; }
+        public int UserScore { get; set; }
 
         [JsonProperty(PropertyName = "id")]
-        public string id { get; set; }
+        public string Id { get; set; }
         [JsonProperty(PropertyName = "isClosed")]
-        public bool isClosed { get; set; }
+        public bool IsClosed { get; set; }
         [JsonProperty(PropertyName = "posts")]
-        public int posts { get; set; }
+        public int Posts { get; set; }
         [JsonProperty(PropertyName = "link")]
-        public object link { get; set; }
+        public object Link { get; set; }
         [JsonProperty(PropertyName = "likes")]
-        public int likes { get; set; }
+        public int Likes { get; set; }
         [JsonProperty(PropertyName = "message")]
-        public string message { get; set; }
+        public string Message { get; set; }
         [JsonProperty(PropertyName = "ipAddress")]
-        public string ipAddress { get; set; }
+        public string IpAddress { get; set; }
         [JsonProperty(PropertyName = "slug")]
-        public string slug { get; set; }
+        public string Slug { get; set; }
         [JsonProperty(PropertyName = "createdAt")]
-        public string createdAt { get; set; }
+        public string CreatedAt { get; set; }
     }
 }

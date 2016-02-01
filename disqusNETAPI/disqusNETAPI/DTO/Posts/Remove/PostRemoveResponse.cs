@@ -10,6 +10,6 @@ namespace disqusNETAPI.DTO.Posts.Remove
     public class PostRemoveResponse
     {
         [JsonProperty(PropertyName = "id")]
-        public string id { get; set; }
+        public string Id { get; set; }
     }
 }

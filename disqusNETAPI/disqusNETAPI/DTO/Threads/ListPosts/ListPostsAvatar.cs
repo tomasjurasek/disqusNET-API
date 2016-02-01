@@ -10,8 +10,8 @@ namespace disqusNETAPI.DTO.Thread.ListPosts
     public class ListPostsAvatar
     {
         [JsonProperty(PropertyName = "permalink")]
-        public string permalink { get; set; }
+        public string Permalink { get; set; }
         [JsonProperty(PropertyName = "cache")]
-        public string cache { get; set; }
+        public string Cache { get; set; }
     }
 }

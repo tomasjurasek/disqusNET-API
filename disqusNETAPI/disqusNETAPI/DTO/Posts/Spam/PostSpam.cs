@@ -10,8 +10,8 @@ namespace disqusNETAPI.DTO.Posts.Spam
     public class PostSpam
     {
         [JsonProperty(PropertyName = "code")]
-        public int code { get; set; }
+        public int Code { get; set; }
         [JsonProperty(PropertyName = "response")]
-        public List<PostSpamResponse> response { get; set; }
+        public List<PostSpamResponse> Response { get; set; }
     }
 }

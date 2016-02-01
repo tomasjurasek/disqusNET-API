@@ -10,26 +10,26 @@ namespace disqusNETAPI.DTO.Thread.ListPosts
     public class ListPostsAuthor
     {
         [JsonProperty(PropertyName = "username")]
-        public string username { get; set; }
+        public string Username { get; set; }
         [JsonProperty(PropertyName = "about")]
-        public string about { get; set; }
+        public string About { get; set; }
         [JsonProperty(PropertyName = "name")]
-        public string name { get; set; }
+        public string Name { get; set; }
         [JsonProperty(PropertyName = "url")]
-        public string url { get; set; }
+        public string Url { get; set; }
         [JsonProperty(PropertyName = "isFollowing")]
-        public bool isFollowing { get; set; }
+        public bool IsFollowing { get; set; }
         [JsonProperty(PropertyName = "isFollowedBy")]
-        public bool isFollowedBy { get; set; }
+        public bool IsFollowedBy { get; set; }
         [JsonProperty(PropertyName = "profileUrl")]
-        public string profileUrl { get; set; }
+        public string ProfileUrl { get; set; }
         [JsonProperty(PropertyName = "avatar")]
-        public ListPostsAvatar avatar { get; set; }
+        public ListPostsAvatar Avatar { get; set; }
         [JsonProperty(PropertyName = "id")]
-        public string id { get; set; }
+        public string Id { get; set; }
         [JsonProperty(PropertyName = "isAnonymous")]
-        public bool isAnonymous { get; set; }
+        public bool IsAnonymous { get; set; }
         [JsonProperty(PropertyName = "email")]
-        public string email { get; set; }
+        public string Email { get; set; }
     }
 }

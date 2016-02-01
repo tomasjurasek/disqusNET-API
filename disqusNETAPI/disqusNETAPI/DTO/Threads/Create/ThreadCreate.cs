@@ -10,8 +10,8 @@ namespace disqusNETAPI.DTO.Thread.Create
     public class ThreadCreate
     {
         [JsonProperty(PropertyName = "code")]
-        public int code { get; set; }
+        public int Code { get; set; }
         [JsonProperty(PropertyName = "response")]
-        public ThreadCreateResponse response { get; set; }
+        public ThreadCreateResponse Response { get; set; }
     }
 }

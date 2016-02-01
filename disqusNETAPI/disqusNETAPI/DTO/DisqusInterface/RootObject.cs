@@ -10,6 +10,6 @@ namespace disqusNETAPI.DTO.DisqusInterface
     public class RootObject
     {
         [JsonProperty(PropertyName = "topic")]
-        public List<Topic> topic { get; set; }
+        public List<Topic> Topic { get; set; }
     }
 }

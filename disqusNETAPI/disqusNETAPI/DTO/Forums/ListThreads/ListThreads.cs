@@ -11,10 +11,10 @@ namespace disqusNETAPI.DTO.Forums.ListThreads
     {
 
         [JsonProperty(PropertyName = "cursor")]
-        public ListThreadsCursor cursor { get; set; }
+        public ListThreadsCursor Cursor { get; set; }
         [JsonProperty(PropertyName = "code")]
-        public int code { get; set; }
+        public int Code { get; set; }
         [JsonProperty(PropertyName = "response")]
-        public List<ListThreadsResponse> response { get; set; }
+        public List<ListThreadsResponse> Response { get; set; }
     }
 }

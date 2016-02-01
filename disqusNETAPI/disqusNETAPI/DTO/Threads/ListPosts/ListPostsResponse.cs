@@ -10,44 +10,44 @@ namespace disqusNETAPI.DTO.Thread.ListPosts
     public class ListPostsResponse
     {
         [JsonProperty(PropertyName = "isJuliaFlagged")]
-        public bool isJuliaFlagged { get; set; }
+        public bool IsJuliaFlagged { get; set; }
         [JsonProperty(PropertyName = "isFlagged")]
-        public bool isFlagged { get; set; }
+        public bool IsFlagged { get; set; }
         [JsonProperty(PropertyName = "forum")]
-        public string forum { get; set; }
+        public string Forum { get; set; }
         [JsonProperty(PropertyName = "parent")]
-        public int? parent { get; set; }
+        public int? Parent { get; set; }
         [JsonProperty(PropertyName = "author")]
-        public ListPostsAuthor author { get; set; }
+        public ListPostsAuthor Author { get; set; }
         [JsonProperty(PropertyName = "media")]
-        public List<object> media { get; set; }
+        public List<object> Media { get; set; }
         [JsonProperty(PropertyName = "isApproved")]
-        public bool isApproved { get; set; }
+        public bool IsApproved { get; set; }
         [JsonProperty(PropertyName = "dislikes")]
-        public int dislikes { get; set; }
+        public int Dislikes { get; set; }
         [JsonProperty(PropertyName = "raw_message")]
-        public string raw_message { get; set; }
+        public string RawMessage { get; set; }
         [JsonProperty(PropertyName = "id")]
-        public string id { get; set; }
+        public string Id { get; set; }
         [JsonProperty(PropertyName = "threads")]
-        public string thread { get; set; }
+        public string Thread { get; set; }
         [JsonProperty(PropertyName = "points")]
-        public int points { get; set; }
+        public int Points { get; set; }
         [JsonProperty(PropertyName = "createdAt")]
-        public string createdAt { get; set; }
+        public string CreatedAt { get; set; }
         [JsonProperty(PropertyName = "isEdited")]
-        public bool isEdited { get; set; }
+        public bool IsEdited { get; set; }
         [JsonProperty(PropertyName = "message")]
-        public string message { get; set; }
+        public string Message { get; set; }
         [JsonProperty(PropertyName = "isHighligted")]
-        public bool isHighlighted { get; set; }
+        public bool IsHighlighted { get; set; }
         [JsonProperty(PropertyName = "ipAddress")]
-        public string ipAddress { get; set; }
+        public string IpAddress { get; set; }
         [JsonProperty(PropertyName = "isSpam")]
-        public bool isSpam { get; set; }
+        public bool IsSpam { get; set; }
         [JsonProperty(PropertyName = "isDeleted")]
-        public bool isDeleted { get; set; }
+        public bool IsDeleted { get; set; }
         [JsonProperty(PropertyName = "likes")]
-        public int likes { get; set; }
+        public int Likes { get; set; }
     }
 }

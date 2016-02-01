@@ -10,18 +10,18 @@ namespace disqusNETAPI.DTO.Forums.ListThreads
     public class ListThreadsCursor
     {
         [JsonProperty(PropertyName = "prev")]
-        public object prev { get; set; }
+        public object Prev { get; set; }
         [JsonProperty(PropertyName = "hasNext")]
-        public bool hasNext { get; set; }
+        public bool HasNext { get; set; }
         [JsonProperty(PropertyName = "next")]
-        public string next { get; set; }
+        public string Next { get; set; }
         [JsonProperty(PropertyName = "hasPrev")]
-        public bool hasPrev { get; set; }
+        public bool HasPrev { get; set; }
         [JsonProperty(PropertyName = "total")]
-        public object total { get; set; }
+        public object Total { get; set; }
         [JsonProperty(PropertyName = "id")]
-        public string id { get; set; }
+        public string Id { get; set; }
         [JsonProperty(PropertyName = "more")]
-        public bool more { get; set; }
+        public bool More { get; set; }
     }
 }

@@ -10,12 +10,12 @@ namespace disqusNETAPI.DTO.DisqusInterface
     public class Action
     {
         [JsonProperty(PropertyName = "name")]
-        public string name { get; set; }
+        public string Name { get; set; }
         [JsonProperty(PropertyName = "required")]
-        public List<string> required { get; set; }
+        public List<string> Required { get; set; }
         [JsonProperty(PropertyName = "method")]
-        public string method { get; set; }
+        public string Method { get; set; }
         [JsonProperty(PropertyName = "formats")]
-        public List<string> formats { get; set; }
+        public List<string> Formats { get; set; }
     }
 }
