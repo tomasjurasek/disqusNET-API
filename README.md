@@ -1,5 +1,6 @@
 # disqusNET-API
 
+This is C# library for disqus API (https://disqus.com/api/docs/)
 ### In your app you need in config:
 ```cs
 <appSettings>
