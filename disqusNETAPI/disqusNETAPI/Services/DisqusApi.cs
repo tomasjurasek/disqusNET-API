@@ -39,6 +39,7 @@ namespace disqusNETAPI.Services
             {
                 var listPosts = (ListPosts)Convert.ChangeType(result, typeof(ListPosts));
                 listPosts.Response.ForEach(i => i.Children = listPosts.Response.Where(ch => ch.Parent == i.Id).ToList());
+                listPosts.Response = listPosts.Response.Where(s => string.IsNullOrEmpty(s.Parent)).ToList();
                 return (T)(object)listPosts;
             }
 

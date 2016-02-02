@@ -6,6 +6,7 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System.Net.Http;
+using System.Reflection;
 using System.Text;
 using System.Threading.Tasks;
 
@@ -36,11 +37,12 @@ namespace disqusNETAPI.Helpers
 
         public RootObject JsonDeserializeInterface()
         {
-            var appDomain = System.AppDomain.CurrentDomain;
-            var basePath = appDomain.RelativeSearchPath ?? appDomain.BaseDirectory;
-            var path = Path.Combine(basePath, "DisqusInterface", "interface.json");
+           
+            var assembly = Assembly.GetExecutingAssembly();
+            var resourceName = "disqusNETAPI.DisqusInterface.interface.json";
+            var stream = assembly.GetManifestResourceStream(resourceName);
 
-            using (StreamReader file = File.OpenText(path))
+            using (StreamReader file = new StreamReader(stream))
             using (JsonReader reader = new JsonTextReader(file))
             {
                 JsonSerializer serializer = new JsonSerializer();
