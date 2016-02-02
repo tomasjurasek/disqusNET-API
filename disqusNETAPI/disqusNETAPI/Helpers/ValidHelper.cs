@@ -13,7 +13,7 @@ namespace disqusNETAPI.Helpers
 
         public void IsMethodValid(string topic, string action, RootObject rootObject)
         {
-            var result = rootObject.topic.SingleOrDefault(s => s.name == topic).action.SingleOrDefault(s => s.name == action);
+            var result = rootObject.Topic.SingleOrDefault(s => s.Name == topic).Action.SingleOrDefault(s => s.Name == action);
             if (result == null)
                 throw new Exception();
         }
