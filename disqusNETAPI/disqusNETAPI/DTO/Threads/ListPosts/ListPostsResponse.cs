@@ -9,6 +9,10 @@ namespace disqusNETAPI.DTO.Thread.ListPosts
 {
     public class ListPostsResponse
     {
+        public ListPostsResponse()
+        {
+            Children = new List<ListPostsResponse>();
+        }
         [JsonProperty(PropertyName = "isJuliaFlagged")]
         public bool IsJuliaFlagged { get; set; }
         [JsonProperty(PropertyName = "isFlagged")]
@@ -16,7 +20,7 @@ namespace disqusNETAPI.DTO.Thread.ListPosts
         [JsonProperty(PropertyName = "forum")]
         public string Forum { get; set; }
         [JsonProperty(PropertyName = "parent")]
-        public int? Parent { get; set; }
+        public string Parent { get; set; }
         [JsonProperty(PropertyName = "author")]
         public ListPostsAuthor Author { get; set; }
         [JsonProperty(PropertyName = "media")]
@@ -49,5 +53,7 @@ namespace disqusNETAPI.DTO.Thread.ListPosts
         public bool IsDeleted { get; set; }
         [JsonProperty(PropertyName = "likes")]
         public int Likes { get; set; }
+
+        public List<ListPostsResponse> Children { get; set; }
     }
 }

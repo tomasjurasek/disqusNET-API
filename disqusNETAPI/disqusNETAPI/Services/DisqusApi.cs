@@ -1,4 +1,5 @@
-﻿using disqusNETAPI.Enums;
+﻿using disqusNETAPI.DTO.Thread.ListPosts;
+using disqusNETAPI.Enums;
 using disqusNETAPI.Helpers;
 using disqusNETAPI.Services.Base;
 using disqusNETAPI.Services.Interface;
@@ -32,6 +33,15 @@ namespace disqusNETAPI.Services
             var response = SendRequest(url, method);
             var result = json.SerializeResponse<T>(response);
 
+            //its need refactoring, create class for it
+            var checkType = Activator.CreateInstance<T>();
+            if (checkType is ListPosts)
+            {
+                var listPosts = (ListPosts)Convert.ChangeType(result, typeof(ListPosts));
+                listPosts.Response.ForEach(i => i.Children = listPosts.Response.Where(ch => ch.Parent == i.Id).ToList());
+                return (T)(object)listPosts;
+            }
+
             return (T)result;
         }
 
@@ -39,7 +49,6 @@ namespace disqusNETAPI.Services
         public HttpResponseMessage Disqus(string topic, string action, Method method, Dictionary<string, string> parameters)
         {
             ValidParamsAndMethod(topic, action, parameters);
-
             var url = urlHelper.CreateUrl(ApiUrl, topic, action, parameters, ApiKey, SecretApiKey, AccessToken);
             var response = SendRequest(url, method);
 
