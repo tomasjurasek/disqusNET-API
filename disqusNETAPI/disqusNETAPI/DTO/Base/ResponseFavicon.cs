@@ -5,9 +5,9 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace disqusNETAPI.DTO.Forums.Create
+namespace disqusNETAPI.DTO.Base
 {
-    public class ForumCreateResponseFavicon
+    public class ResponseFavicon
     {
         [JsonProperty(PropertyName = "permalink")]
         public string Permalink { get; set; }

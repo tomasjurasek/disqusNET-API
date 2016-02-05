@@ -6,16 +6,15 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace disqusNETAPI.DTO.Forums.ListThreads
+namespace disqusNETAPI.DTO.Forums.ListUsers
 {
-   public class ListThreads
+    public class ListUsers
     {
-
         [JsonProperty(PropertyName = "cursor")]
         public ResponseCursor Cursor { get; set; }
         [JsonProperty(PropertyName = "code")]
         public int Code { get; set; }
         [JsonProperty(PropertyName = "response")]
-        public List<ListThreadsResponse> Response { get; set; }
+        public List<object> Response { get; set; }
     }
 }

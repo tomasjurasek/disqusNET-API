@@ -9,8 +9,9 @@
     <AppDesignerFolder>Properties</AppDesignerFolder>
     <RootNamespace>disqusNETAPI</RootNamespace>
     <AssemblyName>disqusNETAPI</AssemblyName>
-    <TargetFrameworkVersion>v4.5.2</TargetFrameworkVersion>
+    <TargetFrameworkVersion>v4.5.1</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
+    <TargetFrameworkProfile />
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <DebugSymbols>true</DebugSymbols>
@@ -30,8 +31,8 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
-    <Reference Include="Newtonsoft.Json, Version=8.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
-      <HintPath>..\packages\Newtonsoft.Json.8.0.2\lib\net45\Newtonsoft.Json.dll</HintPath>
+    <Reference Include="Newtonsoft.Json, Version=7.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
+      <HintPath>..\packages\Newtonsoft.Json.7.0.1\lib\net45\Newtonsoft.Json.dll</HintPath>
       <Private>True</Private>
     </Reference>
     <Reference Include="System" />
@@ -45,9 +46,16 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="DTO\Base\ResponseCursor.cs" />
+    <Compile Include="DTO\Base\ResponseFavicon.cs" />
+    <Compile Include="DTO\Forums\Details\Details.cs" />
+    <Compile Include="DTO\Forums\Details\DetailsResponse.cs" />
+    <Compile Include="DTO\Forums\ListCategories\ListCategories.cs" />
+    <Compile Include="DTO\Forums\ListCategories\ListCategoriesResponse.cs" />
+    <Compile Include="DTO\Forums\ListMostLikedUsers\ListMostLikedUsers.cs" />
     <Compile Include="DTO\Forums\ListThreads\ListThreads.cs" />
-    <Compile Include="DTO\Forums\ListThreads\ListThreadsCursor.cs" />
     <Compile Include="DTO\Forums\ListThreads\ListThreadsResponse.cs" />
+    <Compile Include="DTO\Forums\ListUsers\ListUsers.cs" />
     <Compile Include="DTO\Posts\Remove\PostRemove.cs" />
     <Compile Include="DTO\Posts\Remove\PostRemoveResponse.cs" />
     <Compile Include="DTO\Posts\Spam\PostSpam.cs" />
@@ -57,12 +65,12 @@
     <Compile Include="DTO\Threads\ListPosts\ListPosts.cs" />
     <Compile Include="DTO\Threads\ListPosts\ListPostsAuthor.cs" />
     <Compile Include="DTO\Threads\ListPosts\ListPostsAvatar.cs" />
-    <Compile Include="DTO\Threads\ListPosts\ListPostsCursor.cs" />
     <Compile Include="DTO\Threads\ListPosts\ListPostsResponse.cs" />
+    <Compile Include="DTO\Threads\Remove\Remove.cs" />
+    <Compile Include="DTO\Threads\Remove\RemoveResponse.cs" />
     <Compile Include="Exceptions\RequestException.cs" />
     <Compile Include="DTO\Forums\Create\ForumCreate.cs" />
     <Compile Include="DTO\Forums\Create\ForumCreateResponse.cs" />
-    <Compile Include="DTO\Forums\Create\ForumCreateResponseFavicon.cs" />
     <Compile Include="Helpers\JsonHelper.cs" />
     <Compile Include="Helpers\UrlHelper.cs" />
     <Compile Include="DTO\DisqusInterface\Action.cs" />
@@ -82,6 +90,8 @@
     <EmbeddedResource Include="DisqusInterface\interface.json">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
     <None Include="packages.config" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

@@ -5,9 +5,9 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace disqusNETAPI.DTO.Thread.ListPosts
+namespace disqusNETAPI.DTO.Base
 {
-    public class ListPostsCursor
+    public class ResponseCursor
     {
         [JsonProperty(PropertyName = "prev")]
         public object Prev { get; set; }

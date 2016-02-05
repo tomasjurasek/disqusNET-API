@@ -1,4 +1,5 @@
-﻿using Newtonsoft.Json;
+﻿using disqusNETAPI.DTO.Base;
+using Newtonsoft.Json;
 
 namespace disqusNETAPI.DTO.Forums.Create
 {
@@ -12,6 +13,6 @@ namespace disqusNETAPI.DTO.Forums.Create
         public string Founder { get; set; }
 
         [JsonProperty(PropertyName = "favicon")]
-        public ForumCreateResponseFavicon Favicon { get; set; } 
+        public ResponseFavicon Favicon { get; set; } 
     }
 }

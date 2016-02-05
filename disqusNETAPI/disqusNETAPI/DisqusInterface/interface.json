@@ -1,34 +1,36 @@
 ﻿{
-	"topic": [{
-			"name": "reactions",
-			"action": [{
-					"name": "restore",
-					"required": [
-						"reaction",
-						"forum"
-					],
-					"method": "POST",
-					"formats": [
-						"json",
-						"jsonp"
-					]
-				},
+  "topic": [
+    {
+      "name": "reactions",
+      "action": [
+        {
+          "name": "restore",
+          "required": [
+            "reaction",
+            "forum"
+          ],
+          "method": "POST",
+          "formats": [
+            "json",
+            "jsonp"
+          ]
+        },
 
 
-				{
-					"name": "list",
-					"required": [
-						"forum"
-					],
-					"method": "POST",
-					"formats": [
-						"json",
-						"jsonp"
-					]
-				}
-			]
+        {
+          "name": "list",
+          "required": [
+            "forum"
+          ],
+          "method": "POST",
+          "formats": [
+            "json",
+            "jsonp"
+          ]
+        }
+      ]
 
-		},
+    },
 
     {
       "name": "forums",
@@ -57,6 +59,54 @@
             "json",
             "jsonp",
             "rss"
+          ]
+        },
+
+        {
+          "name": "listCategories",
+          "required": [
+            "forum"
+          ],
+          "method": "GET",
+          "formats": [
+            "json",
+            "jsonp"
+          ]
+        },
+        {
+          "name": "listUsers",
+          "required": [
+            "forum"
+          ],
+          "method": "GET",
+          "formats": [
+            "json",
+            "jsonp"
+          ]
+        },
+
+        {
+
+          "name": "listMostLikedUsers",
+          "required": [
+            "forum"
+          ],
+          "method": "GET",
+          "formats": [
+            "json",
+            "jsonp"
+          ]
+        },
+
+        {
+          "name": "details",
+          "required": [
+            "forum"
+          ],
+          "method": "GET",
+          "formats": [
+            "json",
+            "jsonp"
           ]
         },
 
@@ -99,6 +149,18 @@
             "jsonp",
             "rss"
           ]
+        },
+        {
+          "name": "remove",
+          "required": [
+            "thread"
+          ],
+          "method": "POST",
+          "formats": [
+            "json",
+            "jsonp"
+          ]
+
         }
       ]
     },
@@ -118,20 +180,20 @@
         },
         {
           "name": "spam",
-            "required": [
-              "post"
-            ],
-            "method": "POST",
-            "formats": [
-              "json",
-              "jsonp"
-            ]
-          
+          "required": [
+            "post"
+          ],
+          "method": "POST",
+          "formats": [
+            "json",
+            "jsonp"
+          ]
+
         }
 
       ]
     }
-    
 
-	]
+
+  ]
 }
