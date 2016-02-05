@@ -41,15 +41,20 @@ If you want use some Topics and Actions, first check if they are in interface.js
    var result = disqusApi.Disqus<ForumCreate>("forums", "create", disqusNETAPI.Enums.Method.POST, parameters);
    ```
 
-For now we support only this action:
+For now we support only this actions:
 
 - Forums
     - Create
     - Update
     - ListThreads
+    - ListCategories
+    - ListUsers
+    - ListMostLikedUsers
+    - Details
 - Posts
     - Remove
     - Spam
 - Threads
     - Create
     - ListPosts
+    - Remove
